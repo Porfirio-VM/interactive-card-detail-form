@@ -109,6 +109,7 @@ input{
 
 .front-card img{
     width: 4em;
+    height: auto;
 }
 
 .card-info-wrapper{
