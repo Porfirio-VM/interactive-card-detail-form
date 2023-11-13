@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Frontend Mentor | Interactive card details form</title>
+    </head>
+    <body>
+        <main class="grid main-container">
+
+            <section class="flex card-section">
+                <article class="flex front-card">
+                        <img src="./images/card-logo.svg" alt="">
+                        <div class="flex card-info-wrapper">
+                          <h1 id="cardNumberTag">0000 0000 0000 0000</h1>
+                          <div class="flex card-info-footer">
+                              <p id="nameTag">Jane Appleseed</p>
+                              <aside><span id="monthTag">00</span>/<span id="yearTag">00</span></aside>
+                          </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="back-card">
+                    <span id="cvcTag">000</span>
+                </article>
+            </section>
+
+            <section class="flex form-section">
+                <form action="" id="cardForm" class="flex form-wrapper">
+                    <div class="">
+                        <label for="name">Cardholder name</label>
+                        <input type="text" name="name" id="name" placeholder="e.g Jane Appleseed" maxlength="25">
+                    </div>
+                    <div class="">
+                        <label for="number">Card number</label>
+                        <input type="text" name="number" id="number" maxlength="16"  placeholder="e.g. 1234 5678 9123 0000">
+                    </div>
+                    <div class="">
+                        <div class="flex last-info-wrapper">
+                            <div class="expiration-date">
+                                <label for="">exp.date (mm/yy)</label>
+                                <div class="flex expiration-wrapper">
+                                    <div>
+                                        <input type="text" placeholder="MM" id="month" maxlength="2" name="month">
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="YY" id="year" maxlength="2" name="year">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="cvc-data">
+                                <label for="cvc">cvc</label>
+                                <input type="text" placeholder="e.g. 123" id="cvc" maxlength="3" name="cvc">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Confirm" class="form-submit">
+                </form>
+                <div class="flex success-section">
+                    <img src="./images/icon-complete.svg" alt="">
+                    <h1>Thank You!</h1>
+                    <h4>We've added your card details</h4>
+                    <button id="continue" class="continue">Continue</button>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="./scripts/constants.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+
+    --linear-gradient: hsl(249, 99%, 64%);
+    --red: hsl(0, 100%, 66%);
+
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+
+    --letter-spacing: 2px;
+}
+
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+label{
+    display: block;
+}
+
+input{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+.grid{
+    display: grid;
+}
+
+.main-container{
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+.card-section,
+.form-section{
+    padding: 1rem;
+}
+
+.card-section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-section{
+    background-color: var(--white);
+    letter-spacing: var(--letter-spacing);
+    align-items: center;
+    justify-content: center;
+    color: var(--very-dark-violet);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.form-section input{
+    position: relative;
+    padding: .7em;
+    color: inherit;
+    font-size: 14px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 8px;
+}
+
+.front-card,
+.back-card{
+    padding: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+    width: 22rem;
+    height: 12rem;
+}
+
+.front-card{
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    background-image: url(../images/bg-card-front.png);
+    flex-direction: column;
+    justify-content: space-between;
+    letter-spacing: var(--letter-spacing);
+}
+
+.front-card img{
+    width: 4em;
+}
+
+.card-info-wrapper{
+    flex-direction: column;
+    gap: 1.3em;
+}
+
+.card-info-wrapper h1{
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.expiration-wrapper{
+    gap: 1rem;
+}
+
+.card-info-footer{
+    text-transform: uppercase;
+    font-weight:lighter;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.last-info-wrapper{
+    gap: 1rem;
+    width: 100%;
+}
+
+.expiration-date,
+.cvc-data{
+    width: 50%;
+}
+
+.back-card{
+    margin-left: auto;
+    background-image: url(../images/bg-card-back.png);
+    position: relative;
+}
+
+.back-card span{
+    padding: .5rem;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-wrapper{
+    width: 400px;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-submit{
+    cursor: pointer;
+    background-color: var(--very-dark-violet);
+    color: var(--white) !important;
+}
+
+.form-submit:hover{
+    opacity: .8;
+}
+
+.empty{
+    border-color: var(--red) !important;
+}
+
+.empty:focus{
+    outline: none;
+}
+
+.success-section{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.success-section h4{
+    font-weight: 100;
+    text-transform: none;
+    color: var(--dark-grayish-violet);
+}
+
+.continue{
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--white);
+    width: 100%;
+    padding: .5rem;
+    font-weight: 500;
+    border: none;
+    background-color: var(--very-dark-violet);
+}
+
+.continue:hover{
+    opacity: .8;
+}
+
+.error{
+    margin-top: 2px;
+    font-size: 10.5px;
+    position: absolute;
+    color: var(--red);
+    text-transform: none;
+    font-weight: 500;
+}
+
+@media (max-width: 740px) {
+
+    body{
+        width: 100vw;
+        background-image: url(../images/bg-main-mobile.png);
+        position: relative;
+        align-items: center;
+    }
+
+
+   .card-section{
+    padding: 0;
+    position: relative;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0;
+   }
+   
+   .front-card{
+    margin-left: 10%;
+   }
+
+   .back-card{
+    position: absolute;
+    z-index: -1;
+    top: -50%;
+    right: 10%;
+   }
+
+   .form-section{
+    width: 100%;
+   }
+
+   .form-wrapper{
+    width: 100%;
+   }
+
+   .error{
+    font-size: 2.5vw;
+   }
+
+}
